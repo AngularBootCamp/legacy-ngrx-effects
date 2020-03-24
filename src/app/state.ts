@@ -11,12 +11,12 @@ export class AckAllSuccessAction {
   readonly type = ackAllSuccess;
 }
 
-export const dataReceived = 'DATA_RECEIVED';
-export class DataReceivedAction {
-  readonly type = dataReceived;
+export const initialLoad = 'INITIAL_LOAD';
+export class InitialLoadAction {
+  readonly type = initialLoad;
   // note: readonly in a constructor acts like public, protected, or private
   // and creates a property on the object (with public visibility)
-  constructor(readonly data: AppState) {}
+  constructor(readonly state: AppState) {}
 }
 
 export interface AppState {

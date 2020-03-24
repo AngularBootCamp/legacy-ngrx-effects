@@ -5,9 +5,9 @@ import {
 } from '@ngrx/store';
 
 import {
-  DataReceivedAction,
+  InitialLoadAction,
   ackAllSuccess,
-  dataReceived
+  initialLoad
 } from './state';
 
 export const ackEmployee = 'ACK_EMPLOYEE';
@@ -44,9 +44,9 @@ export function employeeReducer(
         ],
         newEmployees: []
       };
-    case dataReceived:
-      const a = action as DataReceivedAction;
-      return a.data.employees;
+    case initialLoad:
+      const a = action as InitialLoadAction;
+      return a.state.employees;
     default:
       return state;
   }

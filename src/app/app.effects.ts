@@ -11,7 +11,7 @@ import { Employee, EmployeeLoader } from './employee-loader.service';
 import { ModalService } from './modal.service';
 import {
   AckAllSuccessAction,
-  DataReceivedAction,
+  InitialLoadAction,
   ackAll
 } from './state';
 
@@ -52,7 +52,7 @@ export class AppEffects {
     switchMap(() => this.loader.getList()),
     map(
       employees =>
-        new DataReceivedAction({
+        new InitialLoadAction({
           ...initialState,
           employees: {
             currentEmployees: employees.slice(0, 4).map(toName),

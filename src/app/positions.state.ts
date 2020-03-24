@@ -5,9 +5,9 @@ import {
 } from '@ngrx/store';
 
 import {
-  DataReceivedAction,
+  InitialLoadAction,
   ackAllSuccess,
-  dataReceived
+  initialLoad
 } from './state';
 
 export const ackPosition = 'ACK_POSITION';
@@ -44,9 +44,9 @@ export function positionReducer(
         ],
         newPositions: []
       };
-    case dataReceived:
-      const a = action as DataReceivedAction;
-      return a.data.positions;
+    case initialLoad:
+      const a = action as InitialLoadAction;
+      return a.state.positions;
     default:
       return state;
   }
