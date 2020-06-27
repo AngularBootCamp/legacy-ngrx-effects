@@ -28,7 +28,7 @@ const initialState = {
 };
 
 function toName(employee: Employee) {
-  return `${employee.first_name} ${employee.last_name}`;
+  return `${employee.firstName} ${employee.lastName}`;
 }
 
 @Injectable()
